@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Muli:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper {
+  width: 90%;
+  max-width: 150rem;
+  height: 80vh;
+   background-color: white;
+  color: #eee;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: minmax(38%, 40rem) repeat(2, minmax(29%, 29rem));
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 1rem;
+}
+
+.header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: black;
+}
+
+
+
+.form-wrapper {
+  grid-column: 2 / -1;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.income {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+}
+
+.dependent {
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+}
+
+.input-group input:not([type="submit"]) {
+  width: 30rem;
+  margin-bottom: 2.5rem;
+  /* border: none; */
+  /* background: transparent; */
+  /* border-bottom: 0.2rem solid #777; */
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-family: "Baloo Da 2", serif;
+  font-size: 1.8rem;
+  color: black;
+  /* outline: none; */
+  /* transition: border-bottom 0.4s; */
+}
+
+.income input:not([type="submit"]):focus {
+  border-bottom: 0.2rem solid #77c987;
+}
+
+.dependent input:not([type="submit"]):focus {
+  border-bottom: 0.2rem solid #ff716e;
+}
+
+.input-group input[type="submit"] {
+  width: 50%;
+  padding: 0.7rem;
+  border: none;
+  outline: none;
+  border-radius: 0.7rem;
+  font-family: "Muli", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #eee;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-top: 1rem;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.input-group input[type="submit"]:active {
+  transform: translateY(0.3rem);
+}
+
+.income input[type="submit"] {
+  background-color: #77c987;
+}
+
+.dependent input[type="submit"] {
+  background-color: #ff716e;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.transactions {
+  margin-top: -5rem;
+}
+
+.transactions h2 {
+  font-family: "Baloo da 2", serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color:black;
+}
+
+.transactions-income {
+  grid-column: 2 / 3;
+  grid-row: 5 / -1;
+}
+
+.transactions-dependent {
+  grid-column: 3 / -1;
+  grid-row: 5 / -1;
+}
+
+.transaction-employee {
+  width: 92%;
+  max-height: 35rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+
+.transaction {
+  list-style: none;
+  font-family: "Baloo da 2", serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  padding: 0.4rem 0.4rem 0.4rem 0.7rem;
+  border-radius: 0.3rem;
+  width: 32rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.transactions-income .transaction {
+  background-color: #5a9b67;
+}
+
+.transactions-dependent .transaction {
+  background-color: #cf5856;
+}
+
+.transaction-text {
+  width: 23rem;
+}
+
+.transaction-amount {
+  transform: translateX(3rem);
+}
+
+.delete-btn {
+  transform: translateX(4rem);
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  margin: 0 1rem;
+  color: #d4403e;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 58%;
+  }
+
+  .app-wrapper {
+    width: 95%;
+    max-width: 140rem;
+    height: 85vh;
+  }  
+
+  .income-dependent {
+    margin-top: 7rem;
+  }
+
+  .transaction-employee {
+    max-height: 31rem;
+  }
+
+  .transaction {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 52%;
+  }
+
+  .app-wrapper {
+    grid-gap: 0;
+  }
+
+  .transaction-employee {
+    max-height: 29rem;
+  }
+
+  .transaction {
+    width: 28rem;
+  }
+}
+
+.some-page-wrapper {
+    /* margin-top: -50rem; */
+    margin-top: 100px;
+    /* margin: 15px; */
+    margin-left: 0;
+
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+ 
+
+ 
+
+  .table__row{
+    display: flex;
+    color:black;
+    font-size: 18px;
+    
+  }
+  
+  .table__column {
+    font-family: "Baloo Da 2", serif;
+    border: 1px solid blue;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    text-align: right;
+  }
+
+ 
